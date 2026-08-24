@@ -32,3 +32,10 @@ host 半是 noop（仅装配锚点），全部逻辑在浏览器半。
 ## License
 
 MIT
+## 状态（2026-08-24 回退）
+
+本项目前**已从 web profile 卸载**（用户要求回退）：续接判定在真实流式中断场景下
+误判（history 窗口不含用户消息 → "会话无用户消息" 跳过），且当时叠加了服务启动
+慢/页面加载时序问题，体验不佳。代码与机制留档于此，未来想恢复时：改回 profile
+package.json（dependencies + bundles）+ `pnpm install` 即可重新装配；续接判定的
+`hasUserMessage` 窗口需要改为"至少拉 1 页含用户消息"或改用 session 摘要接口。

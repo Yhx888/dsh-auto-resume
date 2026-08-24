@@ -1,0 +1,5 @@
+# dsh-auto-resume bundle patch: one loader row; the web modules scanner
+# discovers the browser half through the `dsh.client` declaration.
+- insert:
+    - id: dsh-auto-resume
+      name: dsh-auto-resume
